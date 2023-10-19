@@ -1,0 +1,20 @@
+.film-container {
+    overflow-x: auto;
+    height: 90vh;
+  }
+  
+  .row.flex-nowrap {
+    flex-wrap: nowrap;
+  }
+  
+  .film-col {
+    min-width: calc(100% / 6);
+    height: 100%;
+  }
+  
+  .film-img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+  }
+  

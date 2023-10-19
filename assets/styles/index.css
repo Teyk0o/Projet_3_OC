@@ -1,0 +1,57 @@
+.img-fit {
+    object-fit: cover !important;
+    height: 100%;
+    width: 100%;
+  }
+
+  .small-img-wrapper {
+    padding: 5px;
+  }
+
+  .main-img-wrapper {
+    margin-bottom: 10px;
+  }
+
+  .border-round {
+    border-radius: 15px;
+  }
+
+  .img-fluid {
+    object-fit: cover !important;
+  }
+
+  .mt-170 {
+    margin-top: 70px;
+  }
+
+  .custom-card {
+    background: no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    position: relative;
+  }
+  
+  .card-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, black, transparent 65%);
+    transition-duration: 1s;
+  }
+  
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    color: white;
+  }
+
+  .card:hover {
+    .card-gradient {
+      background: linear-gradient(to top, #06d6a0, transparent 65%);
+    }
+  }
