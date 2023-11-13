@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Condition pour éviter les boucles de réécriture pour les fichiers et répertoires existants
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Réécriture de l'URL
+RewriteRule ^pre-order$ /pages/pre-order [L]
+RewriteRule ^access$ /pages/access [L]
+RewriteRule ^program$ /pages/program [L]
+RewriteRule ^news/(.*)$ /pages/news/$1 [L]
