@@ -1,0 +1,92 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="../assets/styles/colors.css" rel="stylesheet">
+    <title>Les Films de Plein Air - Pré-inscription</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid flex-column">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="d-flex justify-content-center w-100 border-bottom">
+            <a href="/" style="text-decoration: none;">
+              <span class="navbar-text">
+                Les Films de Plein Air
+              </span>
+            </a>
+          </div>
+          <div class="collapse navbar-collapse justify-content-center w-100 d-lg-flex" id="navbarNav">
+            <ul class="navbar-nav d-flex flex-row justify-content-center">
+              <li class="nav-item me-5">
+                <a class="nav-link" href="program">Programmation</a>
+              </li>
+              <li class="nav-item me-5">
+                <a class="nav-link" href="news/all">Actualités</a>
+              </li>
+              <li class="nav-item me-5">
+                <a class="nav-link" href="#">Pré-inscription</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="access">Accès et infos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <section class="container my-5">
+            <div class="row">
+              <div class="col-12 col-md-8 col-lg-6 mx-auto">
+                <form>
+                  <div class="mb-3">
+                    <label for="filmChoice" class="form-label">Choisissez un film</label>
+                    <select class="form-select" id="filmChoice">
+                      <option>Chuchotements du Passé</option>
+                      <option>Échos de demain</option>
+                      <option>Ombres du changement</option>
+                      <option>Le voile de Versailles</option>
+                      <option>Echos de la route de la soie</option>
+                      <option>Murmure du palais d'hiver</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="numberOfPeople" class="form-label">Nombre de personnes</label>
+                    <input type="number" class="form-control" id="numberOfPeople" min="1" onchange="updateParticipantFields()">
+                  </div>
+                  <div class="mb-3" id="participantInfoContainer"></div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-dark">Se Pré-inscrire</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>          
+      </main>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+    const numberOfPeopleElem = document.getElementById('numberOfPeople');
+    numberOfPeopleElem.value = 1;
+    updateParticipantFields();
+
+    function updateParticipantFields() {
+      const numberOfPeople = numberOfPeopleElem.value;
+      const container = document.getElementById('participantInfoContainer');
+  
+      container.innerHTML = '';
+  
+      for (let i = 1; i <= numberOfPeople; i++) {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'form-control mb-2';
+        input.placeholder = `Nom et Prénom du Participant ${i}`;
+        container.appendChild(input);
+      }
+    }
+  </script>
+</html>
